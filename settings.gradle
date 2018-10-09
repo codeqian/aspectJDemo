@@ -1,1 +1,1 @@
-include ':app', ':TrackPoint', ':testlibrary'
+include ':app', ':TrackPoint'

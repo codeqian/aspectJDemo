@@ -15,7 +15,6 @@ public class MainApp extends Application {
         TrackPoint.init(new TrackPointCallBack() {
             @Override
             public void onClick(String pageClassName, String viewIdName) {
-                Log.d(TAG, "onClick---");
                 Log.d(TAG, "onClick: " + pageClassName + "-" + viewIdName);
                 //添加你的操作
             }
@@ -24,7 +23,7 @@ public class MainApp extends Application {
             public void onPageOpen(String pageClassName) {
                 Log.d(TAG, "onPageOpen: " + pageClassName);
                 //添加你的操作
-            }
+        }
 
             @Override
             public void onPageClose(String pageClassName) {

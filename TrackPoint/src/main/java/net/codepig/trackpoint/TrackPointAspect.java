@@ -1,5 +1,6 @@
 package net.codepig.trackpoint;
 
+import android.util.Log;
 import android.view.View;
 
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -11,11 +12,7 @@ import org.aspectj.lang.annotation.Pointcut;
 public class TrackPointAspect {
 
     @Pointcut("execution(* onClick(..))")
-    public void methodPointcut() {
-    }
-
-    @Pointcut("execution(@butterknife.OnClick * *(..))")
-    public void butterKnifePointcut() {
+    public void onClickPointcut() {
     }
 
     @Pointcut("execution(* android.app.Activity+.onCreate(..))")
@@ -42,7 +39,7 @@ public class TrackPointAspect {
     public void fragmentV4OnDestroyPointcut() {
     }
 
-    @Around("methodPointcut() || butterKnifePointcut()")
+    @Around("onClickPointcut()")
     public void aroundJoinClickPoint(final ProceedingJoinPoint joinPoint) throws Throwable {
         Object target = joinPoint.getTarget();
         String className = "";
